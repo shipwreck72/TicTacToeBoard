@@ -57,3 +57,9 @@ TEST(TicTacToeBoardTest, fullGame)
 	Brd.placePiece(2,2);
 	EXPECT_EQ( X, Brd.getPiece(2,2));
 }
+
+TEST(TicTacToeBoardTest, outBounds)
+{
+	TicTacToeBoard Brd;
+	ASSERT_EQ( Invalid, Brd.getPiece(5,8));
+}

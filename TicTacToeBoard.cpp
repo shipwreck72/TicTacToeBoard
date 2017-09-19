@@ -90,6 +90,7 @@ Piece TicTacToeBoard::getWinner()
      }
     }
     
+    j = 0;
     for(i=0; i<BOARDSIZE; i++)
     {
       if(board[i][j]==X && board[i][j+1] == X && board[i][j+2] == X)
