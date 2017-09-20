@@ -28,6 +28,60 @@ TEST(TicTacToeBoardTest, init)
 			EXPECT_EQ( Blank, Brd.getPiece(i,j));
 }
 
+TEST(TicTacToeBoardTest, wincheck_X)
+{
+	TicTacToeBoard Brd;
+	Brd.placePiece(0,0);
+	Brd.placePiece(0,1);
+	Brd.placePiece(0,2);
+	Brd.placePiece(1,0);
+	Brd.placePiece(1,1);
+	Brd.placePiece(1,2);
+	Brd.placePiece(2,0);
+	Brd.placePiece(2,1);
+	Brd.placePiece(2,2);
+	ASSERT_EQ(X, Brd.getWinner());
+}
+
+TEST(TicTacToeBoardTest, wincheck_CG)
+{
+	TicTacToeBoard Brd;
+	Brd.placePiece(0,0);
+	Brd.placePiece(0,1);
+	Brd.placePiece(0,2);
+	Brd.placePiece(1,1);
+	Brd.placePiece(1,0);
+	Brd.placePiece(1,2);
+	Brd.placePiece(2,1);
+	Brd.placePiece(2,0);
+	Brd.placePiece(2,2);
+	ASSERT_EQ(Blank, Brd.getWinner());
+}
+
+TEST(TicTacToeBoardTest, wincheck_O)
+{
+	TicTacToeBoard Brd;
+	Brd.placePiece(1,0);
+	Brd.placePiece(0,0);
+	Brd.placePiece(2,0);
+	Brd.placePiece(0,1);
+	Brd.placePiece(1,1);
+	Brd.placePiece(0,2);
+	ASSERT_EQ(O, Brd.getWinner());
+}
+
+TEST(TicTacToeBoardTest, wincheck_INC)
+{
+	TicTacToeBoard Brd;
+	Brd.placePiece(0,0);
+	Brd.placePiece(0,1);
+	Brd.placePiece(0,2);
+	Brd.placePiece(1,0);
+	Brd.placePiece(1,1);
+	Brd.placePiece(1,2);
+	ASSERT_EQ(Invalid, Brd.getWinner());
+}
+
 TEST(TicTacToeBoardTest, firstPiece)
 {
 	TicTacToeBoard Brd;

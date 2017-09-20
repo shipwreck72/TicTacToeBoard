@@ -90,6 +90,7 @@ Piece TicTacToeBoard::getWinner()
      }
     }
     
+    i = 0;
     j = 0;
     for(i=0; i<BOARDSIZE; i++)
     {
@@ -115,6 +116,11 @@ Piece TicTacToeBoard::getWinner()
      {
        return O;
      }
-    
-  return Invalid;
+    for(i=0; i<BOARDSIZE; i++)
+      for(j=0; j<BOARDSIZE; j++){
+        if(board[i][j] == Blank){
+          return Invalid;
+        }
+    }
+    return Blank;
 }
