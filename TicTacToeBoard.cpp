@@ -70,7 +70,7 @@ Piece TicTacToeBoard::getPiece(int row, int column)
   {
     return Invalid;
   }
-  return board[column][row];
+  return board[row][column];
 }
 
 /**
